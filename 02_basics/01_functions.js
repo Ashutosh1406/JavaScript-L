@@ -29,7 +29,7 @@ const result = addTwoNumbers(6,8); //print statement for (6,8) with proper data 
 
 // console.log("result",result);
 
-function loginUserMessage(username = "sam"){ //sam is default when nothing is entered so then if wont be ever executed just beacuse username wont ever be ""/unndefined
+function loginUserMessage(username = "sam"){ //sam is default when nothing is entered so then "if" wont be ever executed just beacuse username wont ever be ""/undefined
     if(!username){  //"" treated as false by default
         console.log("please enter username");
         return
@@ -44,7 +44,7 @@ function loginUserMessage(username = "sam"){ //sam is default when nothing is en
 /* TILL NOW FIXED PARAMETERS ENDS */
 
 
-/* UN-DETERMINISTIC PARAMETERS or "N" parameters */
+/* UN-DETERMINISTIC PARAMETERS or "N" parameters SPREADS AND REST*/
 
 // USE CASE "shopping cart" //
 
@@ -56,9 +56,9 @@ function calculateCartPrice(price1,price2,...prices){ //rest and spread operator
 // console.log(calculateCartPrice(200,400,800,1000)); //prints an array 
 
 
-// Object Handling with function
+// Object Handling with function //
 
-const user = { //object creation or class in cpp
+const user = { //object creation or class alike in cpp
     username:"ashutosh",
     price:200
 };
@@ -67,7 +67,7 @@ function handleObject(anyObject){  //function to "parse/print" object values
     console.log(`username is ${anyObject.username} and price is ${anyObject.price}`);
 }
 
-// handleObject(user);
+// handleObject(user); //fn call
 
 const schema = {
     username:"ashutosh",
@@ -84,7 +84,19 @@ function handleObj2(parser){ //parser will reference schema "&copy()" and do the
 console.log(`username is ${parser.username} and email is ${parser.email} moreover password is ${parser.schemaPrimary.password} and home is ${parser.schemaSecondary.address}`);
 }
 
-handleObj2(schema);
+// handleObj2(schema);   //type 1
+
+handleObj({  //object
+    username:"ashutosh",
+    email:"ashutosh@",
+    password:"03924829",
+    address:"home@110"
+})
+
+function handleObj(parser){ //accessor function
+    // const {username,email,password,address} = parser;
+    console.log(`username is ${parser.username} , email is ${parser.email} , password is ${parser.password} and address is ${parser.address}`);
+}
 
 
 // const schema = {
